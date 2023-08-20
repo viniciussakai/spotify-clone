@@ -1,5 +1,4 @@
 import { styled, theme } from "@/styles/stitches.config";
-
 const { colors, fontSizes, fontWeights, space } = theme;
 
 export const Title = styled("h1", {
@@ -13,7 +12,7 @@ export const Title = styled("h1", {
 	variants: {
 		accent: {
 			true: {
-				color: colors.textAccent,
+				color: colors.grass9,
 			},
 		},
 	},
@@ -21,69 +20,111 @@ export const Title = styled("h1", {
 
 export const Text = styled("p", {
 	fontSize: fontSizes.md,
-	color: colors.textSecundary,
+	color: colors.blackA12,
 
 	"&:hover": {
-		color: colors.textAccent,
+		color: colors.grass9,
 	},
 });
 
 export const Button = styled("button", {
-	padding: "0.5rem 1rem",
-	borderRadius: "0.5rem",
-
-	fontSize: fontSizes.md,
+	padding: "0.4rem 0.8rem",
+	borderRadius: "1rem",
 	fontWeight: fontWeights.bold,
+	maxWidth: 200,
 
-	backgroundColor: colors.backgroundGrey,
-	color: colors.text,
+	backgroundColor: colors.gray2,
+	color: colors.gray12,
+	transition: "all 0.s ease-in",
 
 	"&:hover": {
-		backgroundColor: `rgb(${colors.backgroundGrey} / 1.1)`,
+		backgroundColor: colors.gray2,
+	},
+
+	"& >svg": {
+		fontSize: "1.5em",
 	},
 
 	variants: {
 		rounded: {
 			true: {
-				borderRadius: "9999px",
+				borderRadius: "50%",
 				aspectRatio: "1/1",
+
+				padding: space.sm,
+
+				maxWidth: 50,
+
+				display: "inline-flex",
+				justifyContent: "center",
+				alignItems: "center",
 			},
 		},
 
 		size: {
 			large: {
-				true: {
-					padding: "1rem",
-				},
+				fontSize: fontSizes.lg,
 			},
 
 			small: {
-				true: {
-					padding: "0.25rem 0.5rem",
-				},
+				fontSize: fontSizes.sm,
+				padding: "0.5rem",
 			},
 		},
 
-		transparent: {
-			true: {
-				backgroundColor: "transparent",
-				color: colors.textSecundary,
+		color: {
+			accent: {
+				backgroundColor: colors.grass9,
+				color: colors.gray1,
 
 				"&:hover": {
-					color: colors.text,
-					scale: 1.05,
+					color: colors.gray1,
+					backgroundColor: colors.grass8,
 				},
 			},
-		},
 
-		white: {
-			true: {
+			white: {
 				backgroundColor: "white",
-				color: colors.background,
+				color: colors.blackA12,
 
 				"&:hover": {
-					scale: 1.1,
+					scale: 1.02,
 					backgroundColor: "white",
+				},
+			},
+
+			transparent: {
+				backgroundColor: "transparent",
+				color: colors.gray11,
+
+				"&:hover": {
+					color: colors.gray12,
+					scale: 1.05,
+					backgroundColor: "transparent",
+				},
+			},
+
+			translucid: {
+				backgroundColor: colors.blackA12,
+				color: colors.gray12,
+				opacity: 0.8,
+
+				"&:hover": {
+					color: colors.gray12,
+					backgroundColor: colors.blackA12,
+					filter: "brightness(1.1)",
+					opacity: 1,
+				},
+			},
+
+			grey: {
+				backgroundColor: colors.gray3,
+				color: colors.gray12,
+
+				"&:hover": {
+					color: colors.gray12,
+					backgroundColor: colors.gray2,
+					filter: "brightness(1.1)",
 				},
 			},
 		},

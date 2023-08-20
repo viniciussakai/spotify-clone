@@ -1,5 +1,7 @@
 import { createStitches } from "@stitches/react";
-import * as utils from "stitches-utils";
+import * as utils from "stitches-mix";
+
+import { gray, blackA, grass, grayDark } from "@radix-ui/colors";
 
 export const {
 	styled,
@@ -13,42 +15,80 @@ export const {
 } = createStitches({
 	theme: {
 		fontSizes: {
-			sm: "12px",
-			md: "16px",
-			lg: "20px",
-			xl: "24px",
-			"2xl": "32px",
+			xs: "0.75rem",
+			sm: "0.87rem",
+			md: "1rem",
+			lg: "1.25rem",
+			xl: "1.5rem",
+			"2xl": "2rem",
+			"3xl": "3rem",
+			"4xl": "4rem",
 		},
 
 		fontWeights: {
 			normal: "400",
+			medium: "500",
 			bold: "700",
 			bolder: "900",
 		},
 
+		lineHeights: {
+			xs: "0.5rem",
+			sm: "0.75rem",
+			md: "1rem",
+			lg: "1.5",
+			xl: "2rem",
+			"2xl": "2.5rem",
+			"3xl": "3rem",
+		},
+		letterSpacings: {
+			sm: "0.25rem",
+			md: "0.5rem",
+			lg: "0.75rem",
+		},
+
+		sizes: {
+			xs: "1.25rem",
+			sm: "1.5rem",
+			md: "3.1rem",
+		},
+
 		space: {
-			1: "0.5em",
-			2: "1rem",
-			3: "2rem",
-			4: "3rem",
-			5: "4rem",
+			xs: "0.25rem",
+			sm: "0.5rem",
+			md: "1rem",
+			lg: "1.25rem",
+			xl: "1.5rem",
+			"2xl": "3rem",
+		},
+
+		radii: {
+			sm: "5px",
+			md: "8px",
 		},
 
 		colors: {
-			background: "#000000",
-			backgroundHighlight: "#121212",
-			backgroundGrey: "#2A2A2A",
+			// background: "#000000",
+			// backgroundHighlight: "#121212",
+			// backgroundAccent: "#1A1A1A",
+			// backgroundGrey: "#2A2A2A",
+			// text: "#fff",
+			// textSecundary: "#a7a7a7",
+			// textAccent: "#2ec770",
 
-			text: "#fff",
-			textSecundary: "#a7a7a7",
-			textAccent: "#45e391",
+			...grayDark,
+			...blackA,
+			...grass,
+
+			black: "#000",
 		},
 	},
 	media: {
-		phone: "(min-width: 640px)",
-		tablet: "(min-width: 768px)",
-		desktop: "(min-width: 1200px)",
-		largeDesktop: "(min-width: 1980px)",
+		xs: "(max-width: 350px)",
+		sm: "(max-width: 510px)",
+		md: "(max-width: 720px)",
+		lg: "(max-width: 1080px)",
+		xl: "(max-width: 1120px)",
 	},
 	utils,
 });
